@@ -41,7 +41,11 @@ jobs:
       needs: [test,build]
       steps:
         - uses: actions/checkout@v1
+        - name: Git fetch tags
+          run: git fetch --tags
 
+        - name: Check tags
+          run: git tag -l -n
         - run: sudo npm install -g semantic-release @semantic-release/gitlab @semantic-release/changelog conventional-changelog-conventionalcommits @semantic-release/git
         - name: release
           if: github.repository == 'captt-g/SwiftCasbin' && github.event_name == 'push'
