@@ -44,6 +44,10 @@ jobs:
 
         - run: sudo npm install -g semantic-release @semantic-release/gitlab @semantic-release/changelog conventional-changelog-conventionalcommits @semantic-release/git
         - run: sudo npx semantic-release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      
 
         - name: Git fetch tags
           run: git fetch --tags
