@@ -28,5 +28,16 @@ jobs:
 
     - uses: actions/checkout@v1
     - run: swift test  --sanitize=thread
+  run_test_on-swift-5-4:
+    container: 
+      image: swift:5.3-bionic
+    runs-on: ubuntu-latest
+    steps:
+    - uses: fwal/setup-swift@v1
+      with:
+        swift-version: "5.3.0"
+
+    - uses: actions/checkout@v1
+    - run: swift test  --sanitize=thread
 
  
