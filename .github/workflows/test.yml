@@ -46,7 +46,7 @@ jobs:
         - name: release
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: make release
+          run: npx semantic-release
 
         - name: Git fetch tags
           run: git fetch --tags
