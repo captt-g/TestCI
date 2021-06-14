@@ -1,5 +1,5 @@
 name: test
-on: [push,pull_request]
+on: [push,pull_request,rease]
 jobs:
   xenial:
     container: 
@@ -32,7 +32,7 @@ jobs:
   run_test_on_MacOS_lastest:
     container: 
       image: swift:5.4
-    runs-on: MacOS 10.15
+    runs-on: MacOS-10.15
     steps:
     - uses: actions/checkout@v1
     - name: run_test_file
