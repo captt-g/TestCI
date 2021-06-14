@@ -42,14 +42,15 @@ jobs:
       steps:
         - uses: actions/checkout@v1
 
-        - run: yarn install
+        - run: npm install -g semantic-release @semantic-release/gitlab @semantic-release/changelog conventional-changelog-conventionalcommits @semantic-release/git
+        - run: npx semantic-release
 
         - name: Git fetch tags
           run: git fetch --tags
 
         - name: Check tags
           run: git tag -l -n      
-        - run: npx semantic-release
+
 
 
  

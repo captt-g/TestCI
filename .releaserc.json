@@ -1,18 +1,24 @@
 {
     "branches": [
         "+([0-9])?(.{+([0-9]),x}).x",
-        "testCI",
-        {
-            "name": "develop",
-            "prerelease": true
-        }
+        "master", "testCI", { "name": "testCI", "prerelease": true }
     ],
-    "dryRun": false,
-    "debug": false,
+    "debug": true,
+
     "plugins": [
-        "@semantic-release/commit-analyzer",
-        "@semantic-release/release-notes-generator",
-        "@semantic-release/github"
-    ],
-    "preset": "angular"
+        [
+            "@semantic-release/commit-analyzer",
+            {
+                "preset": "conventionalcommits"
+            }
+        ],
+        [
+            "@semantic-release/release-notes-generator",
+            {
+                "preset": "conventionalcommits"
+            }
+        ],
+        "@semantic-release/changelog",
+        "@semantic-release/git"
+    ]
 }
