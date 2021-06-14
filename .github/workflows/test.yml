@@ -39,17 +39,10 @@ jobs:
       name: Release
       runs-on: ubuntu-latest
       needs: [test,build]
-      steps:  
-        - name: checkout
-          uses: actions/checkout@v1
-        
-        - name: setup
-          uses: fwal/setup-swift@v1
-          with:
-            swift-version: "5.4.0"
-        
-        - name: Run semantic-release
-          run: yarn install --no-lockfile && yarn semantic-release
+      steps:
+        - uses: actions/checkout@v1
+
+        - uses: codfish/semantic-release-action@v1
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
