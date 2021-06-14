@@ -1,6 +1,5 @@
 name: test
-on:
-- push
+on: [push,pull_request]
 jobs:
   xenial:
     container: 
@@ -16,3 +15,14 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - run: swift test  --sanitize=thread
+  run_test:
+    container: 
+      image: swift:5.4
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up swift
+      uses: fwal/setup-swift@v1
+    - name: Get swift vision
+      run: swift --version
+      run: swift test  --sanitize=thread
