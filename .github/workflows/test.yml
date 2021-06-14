@@ -44,7 +44,7 @@ jobs:
 
         - run: sudo npm install -g semantic-release @semantic-release/gitlab @semantic-release/changelog conventional-changelog-conventionalcommits @semantic-release/git
         - name: release
-          if: github.repository == 'casbin/casbin' && github.event_name == 'push'
+          if: github.repository == 'casbin/SwiftCasbin' && github.event_name == 'push'
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           run: npx semantic-release
