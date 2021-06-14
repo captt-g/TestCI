@@ -42,8 +42,8 @@ jobs:
       steps:
         - uses: actions/checkout@v1
 
-        - run: npm install -g semantic-release @semantic-release/gitlab @semantic-release/changelog conventional-changelog-conventionalcommits @semantic-release/git
-        - run: npx semantic-release
+        - run: sudo npm install -g semantic-release @semantic-release/gitlab @semantic-release/changelog conventional-changelog-conventionalcommits @semantic-release/git
+        - run: sudo npx semantic-release
 
         - name: Git fetch tags
           run: git fetch --tags
