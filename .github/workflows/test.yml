@@ -3,39 +3,59 @@ on: [push,pull_request,release]
 jobs:
   build:
     container: 
-      image: swift:5.4
-    runs-on: ubuntu-lastest
-    steps:
-    - uses: actions/checkout@v1 
-    - run: swift build
-
-  xenial:
-    container: 
       image: swift:5.4-xenial
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - run: swift build
+    - name: checkout
+      uses: actions/checkout@v1
+    - name: run build
+      run: swift build
 
-  bionic:
+  test:
     container: 
       image: swift:5.4-bionic
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - run: swift test  --sanitize=thread
+    - name: checkout
+      uses: actions/checkout@v1
+    - name: run test
+      run: swift test  --sanitize=thread
 
   run_test_on-swift-5-4:
     container: 
       image: swift:5.4-bionic
     runs-on: ubuntu-latest
     steps:
-    - uses: fwal/setup-swift@v1
+    - name: setup swift
+      uses: fwal/setup-swift@v1
       with:
         swift-version: "5.4.0"
+    - name: checkout
+      uses: actions/checkout@v1
+    - name: run test
+      run: swift test  --sanitize=thread
 
-    - uses: actions/checkout@v1
-    - run: swift test  --sanitize=thread
+  release:
+      name: Release
+      container: 
+      image: swift:5.4-xenial
+      runs-on: ubuntu-lastest
+      needs: [test,build]
+      steps:  
+        - name: checkout
+          uses: actions/checkout@v1
+        
+        - name: setup
+          uses: fwal/setup-swift@v1
+          with:
+            swift-version: "5.4.0"
+        
+         - name: Run semantic-release
+          run: yarn install --no-lockfile && yarn semantic-release
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 
 
  
