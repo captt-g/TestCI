@@ -38,7 +38,7 @@ jobs:
   release:
       name: Release
       container: 
-      image: swift:5.4-xenial
+        image: swift:5.4-xenial
       runs-on: ubuntu-lastest
       needs: [test,build]
       steps:  
