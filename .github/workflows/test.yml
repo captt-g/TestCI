@@ -50,11 +50,11 @@ jobs:
           with:
             swift-version: "5.4.0"
         
-         - name: Run semantic-release
+        - name: Run semantic-release
           run: yarn install --no-lockfile && yarn semantic-release
           env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 
 
