@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 SwiftCasbin
 ====
 
@@ -243,3 +244,6 @@ This project is licensed under the [Apache 2.0 license](LICENSE).
 
 If you have any issues or feature requests, please contact us. PR is welcomed.
 - https://github.com/casbin/SwiftCasbin/issues
+=======
+# TestCI
+>>>>>>> 31b914f (Initial commit)
