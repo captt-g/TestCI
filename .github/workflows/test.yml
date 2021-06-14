@@ -29,7 +29,7 @@ jobs:
   run_test_on_MacOS_lastest:
     container: 
       image: swift:5.4
-    runs-on: macOS-latest
+    runs-on: MacOS 10.15
     steps:
     - uses: actions/checkout@v1
     - name: run_test_file
