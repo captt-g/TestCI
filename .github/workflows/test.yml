@@ -2,7 +2,7 @@ name: test
 on: [push,pull_request,release]
 jobs:
   build:
-     container: 
+    container: 
       image: swift:5.4
     runs-on: ubuntu-lastest
     steps:
