@@ -46,7 +46,7 @@ jobs:
 
         - name: Check tags
           run: git tag -l -n
-        - run: sudo npm install -g semantic-release 
+        - run: sudo npm install semantic-release 
         - name: release
           if: github.repository == 'captt-g/SwiftCasbin' && github.event_name == 'push'
           env:
