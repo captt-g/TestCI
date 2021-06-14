@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/captt-g/SwiftCasbin/compare/v1.0.0...v1.1.0) (2021-06-14)
+
+
+### Features
+
+* nothing ([6f81a43](https://github.com/captt-g/SwiftCasbin/commit/6f81a4334423885f062c9ae873c99bbfa7b151f5))
+
 ## 1.0.0 (2021-06-14)
 
 
