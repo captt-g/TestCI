@@ -3,6 +3,22 @@
 
 ### Features
 
+* nothing ([3dac489](https://github.com/captt-g/SwiftCasbin/commit/3dac4890a9cbb7eb203e9a958f2e5b639b14732d))
+
+
+### Bug Fixes
+
+* but ([050a64d](https://github.com/captt-g/SwiftCasbin/commit/050a64db7eaeb541af76a27d6f567faa1af3c3c1))
+* but ([5fe4f8d](https://github.com/captt-g/SwiftCasbin/commit/5fe4f8da973f208f4c6dace4b75d5b68ef8653dc))
+* but ([d6eb26e](https://github.com/captt-g/SwiftCasbin/commit/d6eb26e3873518dbd2ddb098831244199ebf39c6))
+* some bug ([afb36e3](https://github.com/captt-g/SwiftCasbin/commit/afb36e3822bec896cf94d5daa6becd3ed353bd55))
+* some bug ([ff4bbfe](https://github.com/captt-g/SwiftCasbin/commit/ff4bbfe2f868ca68ac20df13bfb427885f32f12c))
+
+## [1.1.0](https://github.com/captt-g/SwiftCasbin/compare/v1.0.0...v1.1.0) (2021-06-14)
+
+
+### Features
+
 * nothing ([6f81a43](https://github.com/captt-g/SwiftCasbin/commit/6f81a4334423885f062c9ae873c99bbfa7b151f5))
 
 ## 1.0.0 (2021-06-14)
