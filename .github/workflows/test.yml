@@ -25,4 +25,3 @@ jobs:
       uses: fwal/setup-swift@v1
     - name: Get swift vision
       run: swift --version
-      run: swift test  --sanitize=thread
