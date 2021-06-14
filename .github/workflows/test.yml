@@ -42,11 +42,9 @@ jobs:
       steps:
         - uses: actions/checkout@v1
 
-        - uses: codfish/semantic-release-action@v1
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
+        - run: yarn install
+        - run: yarn run build
+        - run: npx semantic-release
 
 
  
