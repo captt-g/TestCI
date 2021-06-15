@@ -48,7 +48,7 @@ jobs:
           run: git tag -l -n
         - run: sudo npm install semantic-release 
         - name: release
-          if: github.repository == 'captt-g/SwiftCasbin' && github.event_name == 'push'
+          if: github.repository == 'Captt-g/TestCI' && github.event_name == 'push'
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           run: npx semantic-release
